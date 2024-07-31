@@ -1,1 +1,20 @@
-<h1>Tela de Login</h1>
+
+<% puts "ESTOU NA VIEW NEW.HTML.ERB NO SESSION!!" %>
+
+<div class="login-container">
+    <h2>login</h2>
+
+    <%= form_with url: session_create_path, method: :post, id: 'loginForm' do %>
+        <%= label_tag :user_type, "Eu sou:" %>
+        <%= select_tag :user_type, options_for_select([['Estudante', 'student'], ['Professor', 'teacher']]), required: true %>
+
+        <%= label_tag :email, "Email:" %>
+        <%= email_field_tag :email, nil, required: true %>
+
+        <%= label_tag :password, "Senha:" %>
+        <%= password_field_tag :password, nil, required: true %>
+
+        <%= submit_tag "Entrar" %>
+    <% end %>
+    <p>Não tem uma conta? <a href="cadastro.html">cadastro</a></p>
+</div>

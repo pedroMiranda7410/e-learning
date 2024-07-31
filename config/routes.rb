@@ -7,4 +7,9 @@ Rails.application.routes.draw do
 
   # get '/show', to: 'articles#show'
   get '/login', to: 'session#new'
+  post '/session/create', to: 'session#create'
+
+  # MÉTODOS QUE EXISTEM PARA ROTAS:
+  # GET: Para receber algum dado. Um template ou um dado.
+  # POST, UPDATE, DELETE: Executar alguma ação
 end

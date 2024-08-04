@@ -3,7 +3,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "articles#list"
+  root "user#dashboard"
 
-  get '/show', to: 'articles#show'
+  # get '/show', to: 'articles#show'
+  get '/login', to: 'session#new'
+  post '/session/create', to: 'session#create'
+
+  # MÉTODOS QUE EXISTEM PARA ROTAS:
+  # GET: Para receber algum dado. Um template ou um dado.
+  # POST, UPDATE, DELETE: Executar alguma ação
 end

@@ -10,6 +10,23 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+  <nav>
+    <%= link_to 'E-Learning', '#', class: 'logo' %>
+    <div class="mobile-menu">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <ul class="nav-list">
+      <li><%= link_to 'Inicio', '#inicio' %></li>
+      <li><%= link_to 'Curso', '#curso' %></li>
+      <li><%= link_to 'Projetos', '#projetos' %></li>
+      <li><%= link_to 'Login', '#login' %></li>
+      <li><%= link_to 'Cadastro', '#cadastro' %></li>
+    </ul>
+  </nav>
+</header>
+
   </body>
 </html>

@@ -1,0 +1,27 @@
+<div class="login-container">
+    <h2>Cadastrar</h2>
+
+    <%= form_with model: @user, url: user_create_path, method: :post do |form| %>
+        <%= form.label :type, "Eu sou:" %>
+        <%= form.select :type, options_for_select([['Estudante', 'Student'], ['Professor', 'Teacher']]), required: true %>
+
+        <%= form.label :name, "Nome:" %>
+        <%= form.text_field :name, required: true %>
+
+        <%= form.label :email, "Email:" %>
+        <%= form.email_field :email, required: true %>
+
+        <%= form.label :password, "Nova Senha:" %>
+        <%= form.password_field :password, required: true %>
+
+        <%= form.label :password_confirmation, "Confirmar Senha:" %>
+        <%= form.password_field :password_confirmation, required: true %>
+
+        <% if flash[:alert] %>
+            <div class="alert"><%= flash[:alert] %></div>
+        <% end %>
+
+        <%= submit_tag "Criar conta" %>
+    <% end %>
+    <p>Já possuo conta. Voltar para tela de <a href="/login">login</a></p>
+</div>

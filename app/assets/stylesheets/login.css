@@ -1,5 +1,7 @@
+.wrap-login-content {
+    width: 100%;
+    height: 100%;
 
-body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     display: flex;
@@ -9,29 +11,20 @@ body {
     margin: 0;
 }
 
-.container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-}
-
-h2 {
+.login-container h2 {
     margin-bottom: 20px;
 }
 
-form {
+.login-container form {
     display: flex;
     flex-direction: column;
 }
 
-label {
+.login-container label {
     margin-bottom: 5px;
 }
 
-input, select {
+.login-container input,.login-container  select {
     margin-bottom: 15px;
     padding: 10px;
     font-size: 16px;
@@ -39,7 +32,7 @@ input, select {
     border-radius: 5px;
 }
 
-button {
+.login-container button {
     padding: 10px;
     font-size: 16px;
     background-color: #007bff;
@@ -49,21 +42,21 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.login-container button:hover {
     background-color: #0056b3;
 }
 
-p {
+.login-container p {
     margin-top: 15px;
     font-size: 14px;
 }
 
-a {
+.login-container a {
     color: #007bff;
     text-decoration: none;
 }
 
-a:hover {
+.login-container a:hover {
     text-decoration: underline;
 }
 

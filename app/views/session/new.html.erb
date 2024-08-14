@@ -1,24 +1,26 @@
-<div class="login-container">
-    <h2>login</h2>
+<div class="wrap-login-content">
+    <div class="login-container">
+        <h2>login</h2>
 
-    <%= form_with url: session_create_path, method: :post, id: 'loginForm' do %>
-        <%= label_tag :user_type, "Eu sou:" %>
-        <%= select_tag :user_type, options_for_select([['Estudante', 'student'], ['Professor', 'teacher']]), required: true %>
+        <%= form_with url: session_create_path, method: :post, id: 'loginForm' do %>
+            <%= label_tag :user_type, "Eu sou:" %>
+            <%= select_tag :user_type, options_for_select([['Estudante', 'student'], ['Professor', 'teacher']]), required: true %>
 
-        <%= label_tag :email, "Email:" %>
-        <%= email_field_tag :email, nil, required: true %>
+            <%= label_tag :email, "Email:" %>
+            <%= email_field_tag :email, nil, required: true %>
 
-        <%= label_tag :password, "Senha:" %>
-        <%= password_field_tag :password, nil, required: true %>
+            <%= label_tag :password, "Senha:" %>
+            <%= password_field_tag :password, nil, required: true %>
 
-        <% if flash[:notice] %>
-            <div class="notice"><%= flash[:notice] %></div>
+            <% if flash[:notice] %>
+                <div class="notice"><%= flash[:notice] %></div>
+            <% end %>
+            <% if flash[:alert] %>
+                <div class="alert"><%= flash[:alert] %></div>
+            <% end %>
+
+            <%= submit_tag "Entrar" %>
         <% end %>
-        <% if flash[:alert] %>
-            <div class="alert"><%= flash[:alert] %></div>
-        <% end %>
-
-        <%= submit_tag "Entrar" %>
-    <% end %>
-    <p>Não tem uma conta? <a href="cadastro.html">cadastro</a></p>
+        <p>Não tem uma conta? <a href="/user/new">cadastro</a></p>
+    </div>
 </div>

@@ -1,5 +1,8 @@
 class SessionController < ApplicationController
+  skip_before_action :authenticate, only: [ :new, :create ]
+
   def new 
+    session[:user_id] = nil
   end
 
   def create

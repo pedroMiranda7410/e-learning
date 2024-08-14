@@ -1,7 +1,7 @@
 class UserController < ApplicationController
+  skip_before_action :authenticate, only: [ :new, :create ]
 
   def dashboard
-    @user = User.find_by_id(session[:user_id])
   end
 
   def new
@@ -30,5 +30,5 @@ class UserController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:name, :email, :password, :type)
-    end
+    end 
 end

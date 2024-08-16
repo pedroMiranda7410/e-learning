@@ -15,10 +15,9 @@ Rails.application.routes.draw do
 
   # CRUD - Users
   get '/user/new', to: 'user#new'
-  get '/user/:id/edit', to: 'user#edit'
+  get '/profile', to: 'user#profile'
   post '/user/create', to: 'user#create'
-  patch '/user/:id/update', to: 'user#update'
-  delete '/user/:id/delete', to: 'user#delete'
+  patch '/user/update', to: 'user#update'
 
   post '/session/create', to: 'session#create'
 end

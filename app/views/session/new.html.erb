@@ -3,9 +3,6 @@
         <h2>login</h2>
 
         <%= form_with url: session_create_path, method: :post, id: 'loginForm' do %>
-            <%= label_tag :user_type, "Eu sou:" %>
-            <%= select_tag :user_type, options_for_select([['Estudante', 'student'], ['Professor', 'teacher']]), required: true %>
-
             <%= label_tag :email, "Email:" %>
             <%= email_field_tag :email, nil, required: true %>
 

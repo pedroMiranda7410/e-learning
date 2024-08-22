@@ -19,12 +19,7 @@ class UserController < ApplicationController
     end
   end 
 
-  def instructor?
-    self.instructor
-  end
-  def edit
-    user = User.find_by_id(params[:id])
-    return render json: user, status: :ok 
+  def profile
   end
 
   def update

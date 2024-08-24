@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # resources :comments
   root "user#dashboard"
 
-  get '/login', to: 'session#new'
+  get '/login', to: 'session#new', as: 'login'
 
   # CRUD - Users
   get '/user/new', to: 'user#new'

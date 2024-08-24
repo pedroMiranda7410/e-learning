@@ -2,6 +2,7 @@ class UserController < ApplicationController
   skip_before_action :authenticate, only: [ :new, :create ]
 
   def dashboard
+    @user_list = User.all
   end
 
   def new

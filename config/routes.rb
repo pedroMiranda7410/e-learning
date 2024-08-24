@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   post '/session/create', to: 'session#create'
 
   get '/series/new', to: 'series#new'
-  get '/index', to: 'series#index'
+  get '/series', to: 'series#index'
 end

@@ -2,7 +2,7 @@ class UserController < ApplicationController
   skip_before_action :authenticate, only: [ :new, :create ]
 
   def dashboard
-  end
+  end 
 
   def new
     @user = User.new

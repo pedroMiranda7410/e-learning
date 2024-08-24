@@ -3,11 +3,6 @@ class SeriesController < ApplicationController
   #before_action :require_instructor, only: [:new, :create]
   def index
     @series = Serie.all 
-
-  #  if current_user.instrutor
-  #    render 'index_instrutor'
-  #  else 
-  #    render 'index_aluno' 
   end
 
   def new
@@ -23,13 +18,14 @@ class SeriesController < ApplicationController
     end
   end
 
-  def series_params
-    params.require(:series).permit(:title, :description, :image_url, :user_id)
-  end
-
-  def require_instructor 
-    unless current-user.instructor
-      redirect_to root_parth, alert: "Acesso negado!"
+  private 
+    def series_params
+      params.require(:series).permit(:title, :description, :image_url, :user_id)
     end
-  end
+
+    def require_instructor 
+      unless current_user.is_instructor?
+        redirect_to root_parth, alert: "Acesso negado!"
+      end
+    end
 end

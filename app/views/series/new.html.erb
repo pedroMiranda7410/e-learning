@@ -1,23 +1,27 @@
 
 
 
-    <div class="create_series_container">
-<h1 class="create_series_h1">Crie sua Série</h1>
+<div class="create_series_container">
+    <h1 class="create_series_h1">Crie sua Série</h1>
 
-    <form  method="post" action="/series/create" class="create_series_form">
-        <label class="create_series_label" for="titulo" class=>Título:</label>
-        <input class="create_series_input" type="text" id="titulo" name="titulo" required>
-        <br><br>
+    <%= form_with model: @serie, url: series_create_path, method: :post, class:"create_series_form" do |form| %>
 
-        <label class="create_series_label" for="descricao">Descrição:</label>
-        <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea>
-        <br><br>
+                
+        <%= form.label :title, "Título:", class:"create_series_label" %>
+        <%= form.text_field :title, required: true, class:"create_series_input" %>
 
-        <label  class="create_series_label" for="imagem">URL da imagem:</label>
-        <input class="create_series_input" type="text" id="imagem" name="imagem" required>
-        <br><br>
-      
-        <button class="create_series_button" type="submit">Enviar</button>
-    
-    </form>
+        <%= form.label :description, "Descrição:",class:"create_series_label" %>
+        <%= form.text_area :description, required: true %>
+
+        <%= form.label :image_url, "Imagem:",class:"create_series_label" %>
+        <%= form.text_field :image_url, required: true, class:"create_series_input" %>
+
+        <%= submit_tag "enviar", class:"create_series_button" %>
+
+
+    <%end %>
+
 </div>
+
+
+

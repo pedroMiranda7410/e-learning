@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :series
+  has_many :series, class_name:"Serie" 
   self.inheritance_column = :_type_disabled
 
   def self.students

@@ -10,7 +10,7 @@ class SeriesController < ApplicationController
   end
     
   def create 
-    @serie = current_user.serie.build(series_params)
+    @serie = current_user.series.build(series_params)
     if @serie.save
       redirect_to @serie, notice: "Serie criada com sucesso!"
     else
@@ -20,7 +20,7 @@ class SeriesController < ApplicationController
 
   private 
     def series_params
-      params.require(:series).permit(:title, :description, :image_url, :user_id)
+      params.require(:serie).permit(:title, :description, :image_url, :user_id)
     end
 
     def require_instructor 

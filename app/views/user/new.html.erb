@@ -4,7 +4,7 @@
     
         <%= form_with model: @user, url: user_create_path, method: :post do |form| %>
             <%= form.label :type, "Eu sou:" %>
-            <%= form.select :type, options_for_select([['Estudante', 'Student'], ['Professor', 'Teacher']]), required: true %>
+            <%= form.select :type, options_for_select([['Estudante', 'Student'], ['Professor', 'Instructor']]), required: true %>
     
             <%= form.label :name, "Nome:" %>
             <%= form.text_field :name, required: true %>

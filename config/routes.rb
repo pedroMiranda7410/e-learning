@@ -20,4 +20,9 @@ Rails.application.routes.draw do
   patch '/user/update', to: 'user#update'
 
   post '/session/create', to: 'session#create'
+
+  get '/series/new', to: 'series#new'
+  get '/series', to: 'series#index'
+  post '/series/create', to: 'series#create'
+
 end

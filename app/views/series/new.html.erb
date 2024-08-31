@@ -1,0 +1,27 @@
+
+
+
+<div class="create_series_container">
+    <h1 class="create_series_h1">Crie sua Série</h1>
+
+    <%= form_with model: @serie, url: series_create_path, method: :post, class:"create_series_form" do |form| %>
+
+                
+        <%= form.label :title, "Título:", class:"create_series_label" %>
+        <%= form.text_field :title, required: true, class:"create_series_input" %>
+
+        <%= form.label :description, "Descrição:",class:"create_series_label" %>
+        <%= form.text_area :description, required: true %>
+
+        <%= form.label :image_url, "Imagem:",class:"create_series_label" %>
+        <%= form.text_field :image_url, required: true, class:"create_series_input" %>
+
+        <%= submit_tag "enviar", class:"create_series_button" %>
+
+
+    <%end %>
+
+</div>
+
+
+

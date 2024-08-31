@@ -3,7 +3,7 @@ class UserController < ApplicationController
 
   def dashboard
     @user_list = User.all
-  end
+  end 
 
   def new
     @user = User.new

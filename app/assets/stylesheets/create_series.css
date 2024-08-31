@@ -1,13 +1,13 @@
-body{
+.create_series_container{
     display: flex;
    flex-direction: column;
    align-items: center;
    padding: 100px;
 }
-h1{
+.create_series_h1{
     font-size: 40px;
 }
-form {
+.create_series_form {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -16,7 +16,7 @@ form {
     max-width: 500px;
 }
 
-label {
+.create_series_label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
@@ -24,7 +24,7 @@ label {
 
 input[type="text"],
 textarea,
-input[type="file"] {
+.create_series_input[type="file"] {
     width: calc(100% - 22px);
     padding: 10px;
     border: 1px solid #ddd;
@@ -37,7 +37,7 @@ textarea {
     resize: vertical;
 }
 
-button {
+.create_series_button {
 
     background-color: red;
     color: #fff;
@@ -50,7 +50,7 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #ff0303;
 }
 
 @media (max-width: 600px) {

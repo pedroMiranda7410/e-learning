@@ -4,19 +4,20 @@
     <div class="create_series_container">
 <h1 class="create_series_h1">Crie sua Série</h1>
 
-    <form class="create_series_form">
-        <label for="titulo">Título:</label>
-        <input type="text" id="titulo" name="titulo" required>
+    <form  method="post" action="/series/create" class="create_series_form">
+        <label class="create_series_label" for="titulo" class=>Título:</label>
+        <input class="create_series_input" type="text" id="titulo" name="titulo" required>
         <br><br>
 
-        <label for="descricao">Descrição:</label>
+        <label class="create_series_label" for="descricao">Descrição:</label>
         <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea>
         <br><br>
 
-        <label for="imagem">Escolha uma imagem:</label>
-        <input type="file" id="imagem" name="imagem" accept="image/*" required>
+        <label  class="create_series_label" for="imagem">URL da imagem:</label>
+        <input class="create_series_input" type="text" id="imagem" name="imagem" required>
         <br><br>
-
-        <button type="submit">Enviar</button>
+      
+        <button class="create_series_button" type="submit">Enviar</button>
+    
     </form>
 </div>

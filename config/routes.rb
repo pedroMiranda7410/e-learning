@@ -23,4 +23,6 @@ Rails.application.routes.draw do
 
   get '/series/new', to: 'series#new'
   get '/series', to: 'series#index'
+  post '/series/create', to: 'series#create'
+
 end

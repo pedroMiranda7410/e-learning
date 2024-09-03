@@ -1,6 +1,6 @@
 class SeriesController < ApplicationController
-  #before_action :authenticate_user!
-  #before_action :require_instructor, only: [:new, :create]
+  #before_action :authenticate_user! (ação já feita na aplicattion_controller)
+  before_action :require_instructor, only: [:new, :create, :index] 
   def index
     @series = Serie.all 
   end

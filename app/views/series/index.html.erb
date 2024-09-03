@@ -1,20 +1,22 @@
 
     <header>
-        <h1>Minhas Séries Favoritas</h1>
+        <h1>Minhas Séries:</h1>
     </header>
 
     <main>
         <section class="series-list">
             <ul>
+                <% @series.each do |series| %>
                 <li class="serie">
-                    <img src="aula violao.jpg"
-                    <div> class="info"> 
-                        <h2>Nome da Série 1</h2>
-                        <p>Sinopse da Série 1 (Breve descrição)</p>
-                        <p>Gêneros: Ação, Drama, Ficção Científica</p>
+                    <img src="<% series.image_url %>" alt="Imagem da Série">
+                      <div class="info"> 
+                        <h2>Título:<%= series.title %></h2>
+                        <p>Descrição:<%= series.description %></p>
+                        <p>Professor: <%= series.user_id %></p>
                         <p>Nota: 4.5/5</p>
                     </div>
                 </li>
+                <% end %>
                 <!-- Mais itens de série aqui -->
             </ul>
         </section>

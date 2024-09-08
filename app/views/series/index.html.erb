@@ -1,29 +1,28 @@
 
-    <header>
-        <h1>Minhas Séries:</h1>
-    </header>
+    <h1 class="series-h1">Minhas Séries:</h1>
 
     <main>
         <section class="series-list">
-            <ul>
-                <% @series.each do |series| %>
-                <li class="serie">
-                    <img src="<% series.image_url %>" alt="Imagem da Série">
-                      <div class="info"> 
-                        <h2>Título:<%= series.title %></h2>
-                        <p>Descrição:<%= series.description %></p>
-                        <p>Professor: <%= series.user_id %></p>
-                        <p>Nota: 4.5/5</p>
-                    </div>
-                </li>
+            <% @series.each do |series| %>
+                <% author = User.find_by_id(series.user_id)%>
+                <% if author.is_instructor? %>
+                    <a href="/series/<%= series.id %>" class="serie">
+                        <img class="serie-card-image" src="<%= series.image_url %>" alt="Imagem da Série">
+                        <div class="info"> 
+                            <h2><%= series.title %></h2>
+                            <p><%= series.description %></p>
+                            <p style= "font-size: 12px"> Autor: <%= author.name %></p>
+                        </div>
+                    </a>
                 <% end %>
+            <% end %>
                 <!-- Mais itens de série aqui -->
-            </ul>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2023 - Seu Nome</p>
     </footer>
+
 
 

@@ -6,16 +6,22 @@ class SeriesController < ApplicationController
   end
 
   def new
-      @serie = Serie.new
+    @serie = Serie.new
   end
     
   def create 
     @serie = current_user.series.build(series_params)
-    if @serie.save
+    if current_user.is_instructor? && @serie.save 
       redirect_to @serie, notice: "Serie criada com sucesso!"
     else
       render :new
     end
+  end
+
+  def show 
+    puts "------"
+    puts params[:serie_id]
+    @serie = Serie.find_by_id(params[:serie_id])
   end
 
   private 

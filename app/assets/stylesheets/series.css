@@ -1,0 +1,45 @@
+
+.series-h1 { 
+   display: flex;
+   justify-content: center;
+   flex-direction: row;
+   width: 100%;
+}
+
+.serie{
+   background-color: rgb(255, 255, 255);
+   color: rgb(0, 0, 0);
+   width: 300px;
+   margin: 10px;
+   padding: 2px;
+   border-radius: 14px;
+   /*border: 3px solid rgb(133, 118, 118);
+   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);*/
+   font-family: 'Montserrat', 'sans-serif' ;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.series-list{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+}
+
+.serie-card-image{
+   width: 100%;
+   height: 140px;
+   border-top-left-radius: 14px;
+   border-top-right-radius: 14px;
+}
+
+.serie .info{
+   padding: 8px;
+
+}
+.serie .info h2::first-letter{
+   text-transform: capitalize;
+}
+
+.serie .info p{ 
+   color: #4b4b4b;
+}

@@ -29,7 +29,7 @@ class SeriesController < ApplicationController
 
     def require_instructor 
       unless current_user.is_instructor?
-        redirect_to root_parth, alert: "Acesso negado!"
+        redirect_to root_path, alert: "Acesso negado!"
       end
     end
 end

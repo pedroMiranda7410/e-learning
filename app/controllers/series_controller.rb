@@ -19,8 +19,6 @@ class SeriesController < ApplicationController
   end
 
   def show 
-    puts "------"
-    puts params[:serie_id]
     @serie = Serie.find_by_id(params[:serie_id])
   end
 

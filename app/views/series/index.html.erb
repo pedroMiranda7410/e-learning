@@ -1,28 +1,31 @@
 
-    <h1 class="series-h1">Minhas Séries:</h1>
+<h1 class="series-h1">Minhas Séries:</h1>
 
-    <main>
-        <section class="series-list">
-            <% @series.each do |series| %>
-                <% author = User.find_by_id(series.user_id)%>
-                <% if author.is_instructor? %>
-                    <a href="/series/<%= series.id %>" class="serie">
-                        <img class="serie-card-image" src="<%= series.image_url %>" alt="Imagem da Série">
-                        <div class="info"> 
-                            <h2><%= series.title %></h2>
-                            <p><%= series.description %></p>
-                            <p style= "font-size: 12px"> Autor: <%= author.name %></p>
-                        </div>
-                    </a>
-                <% end %>
+<!-- <a href="/series/new" class="create_series_button">Cadastrar Série</a> -->
+<% link_to "Cadastrar Série", series_new_path, class: "create_series_button" %>
+
+<main>
+    <section class="series-list">
+        <% @series.each do |series| %>
+            <% author = User.find_by_id(series.user_id)%>
+            <% if author.is_instructor? %>
+                <a href="/series/<%= series.id %>" class="serie">
+                    <img class="serie-card-image" src="<%= series.image_url %>" alt="Imagem da Série">
+                    <div class="info"> 
+                        <h2><%= series.title %></h2>
+                        <p><%= series.description %></p>
+                        <p style= "font-size: 12px"> Autor: <%= author.name %></p>
+                    </div>
+                </a>
             <% end %>
-                <!-- Mais itens de série aqui -->
-        </section>
-    </main>
+        <% end %>
+            <!-- Mais itens de série aqui -->
+    </section>
+</main>
 
-    <footer>
-        <p>&copy; 2023 - Seu Nome</p>
-    </footer>
+<footer>
+    <p>&copy; 2023 - Seu Nome</p>
+</footer>
 
 
 

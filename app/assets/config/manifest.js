@@ -1,5 +1,9 @@
 //= link_tree ../images
 //= link_directory ../stylesheets .css
+//= link application.js
+//= link bootstrap.js
+//= link @popperjs--core.js
+
 class mobileNavBar{
     constructor(mobileMenu, navList, navLinks){
         this.mobileMenu = document.querySelector(mobileMenu);
@@ -39,4 +43,5 @@ const mobileNavbar = new mobileNavbar(
     ".nav-list li"
 )
 mobileNavbar.init();
-}
+}//= link_tree ../../javascript .js
+//= link_tree ../../../vendor/javascript .js

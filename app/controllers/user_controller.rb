@@ -12,6 +12,13 @@ class UserController < ApplicationController
   def create
     user = User.new(user_params)
 
+    # user = User.new(
+    #   name: params[:user][:name], 
+    #   email: params[:user][:email], 
+    #   password: params[:user][:password],
+    #   type: params[:user][:type]
+    # )
+
     if user.save
       redirect_to login_path, notice: 'Conta criada com sucesso.'
     else 

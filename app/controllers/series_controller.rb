@@ -10,7 +10,23 @@ class SeriesController < ApplicationController
   end
     
   def create 
+    params = {
+      serie: {
+        title: "meu titulo",
+        description: "Minhas descricao",
+        image_url: "www.google.com/image"
+      }
+    }
+
     @serie = current_user.series.build(series_params)
+
+    @serie = Serie.new(
+      title: params[:serie][:title],
+      description: params[:serie][:description],
+      image_url: params[:serie][:image_url],
+      user_id: current_user.id
+    )
+
     if current_user.is_instructor? && @serie.save 
       redirect_to @serie, notice: "Serie criada com sucesso!"
     else

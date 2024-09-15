@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+#serie-information{
+    padding: 25px;
+}
+
+.serie-title{
+    font-weight: bold;
+    width: 110px;
+}
+
+.serie-title::first-letter{
+    text-transform: capitalize;
+}
+
+.serie-description{
+    margin: 10px 0;
+    width: 100px;
+}
+
+.serie-image-url{
+    text-align: right;
+}

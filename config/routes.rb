@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   post '/series/create', to: 'series#create'
   get '/series/:serie_id', to: 'series#show'
 
-  get '/lesson/new', to: 'lesson#new'
-  post 'lesson/create', to: 'lesson#create'
+  get '/series/:serie_id/lesson/new', to: 'lesson#new'
+  post '/lesson/create', to: 'lesson#create', as: 
+  get '/lesson/show'
 end

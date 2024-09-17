@@ -1,7 +1,7 @@
 <section id="serie-information">
     <div class="serie-title"> <%= @serie.title %></div>
     <div class="serie-description"> <%= @serie.description %></div>
-    <div class="serie-image-url"> <%= @serie.image_url %> </div>
+    <div class="serie-image-url"> <%= @serie.image_url %></div>
 </section>
 
 <section id="series-lessons">
@@ -14,5 +14,4 @@
     <div class="lesson7">Aula</div>
 </section>
 
-!--<%= link_to "Cadastrar Aula", lesson_new_path, class: create_lesson_button %>
--->
+<%= link_to "Cadastrar Aula", lessons_new_path %>

@@ -1,0 +1,17 @@
+<div>
+    <h1>Crie sua Aula</h1>
+    <%= form_with model: @lessons, url: lessons-create-path, method :post, class:"create_lessons_form" do |form| %>
+        
+        <%= form.label :title, "Título:", class:"create_lessons_label" %>
+        <%= form.text_field :title, required: true, class:"create_lessons_input" %>
+
+        <%= form.label :description, "Descrição:",class:"create_lessons_label" %>
+        <%= form.text_area :description, required: true %>
+
+        <%= form.label :image_url, "Imagem:",class:"create_lessons_label" %>
+        <%= form.text_field :video_url, required: true, class:"create_lessons_input" %>
+
+        <%= submit_tag "enviar", class:"create_lessons_button" %>
+    
+    <%end%>
+</div>

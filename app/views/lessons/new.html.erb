@@ -1,6 +1,6 @@
 <div>
     <h1>Crie sua Aula</h1>
-    <%= form_with model: @lesson, url: lessons_create_path, method: :post, class:"create_lessons_form" do |form| %>
+    <%= form_with model: @lesson, url: lessons_create_path(serie_id:@serie_id), method: :post, class:"create_lessons_form" do |form| %>
         
         <%= form.label :title, "Título:", class:"create_lessons_label" %>
         <%= form.text_field :title, required: true, class:"create_lessons_input" %>

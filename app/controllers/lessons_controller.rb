@@ -2,15 +2,23 @@ class LessonsController < ApplicationController
  
   def new
     @lesson = Lesson.new
+   
+    @serie_id = params[:serie_id]
   end
 
   def create 
-    @lesson = current_serie.lessons.build(lessons_params)
-      if @lesson.save 
-        redirect_to @current_serie, notice: "Aula criada com sucesso!"
-      else 
-        render :new, alert: "Erro ao criar aula"
-      end
+
+    @lesson = Lesson.new(title: lessons_params[:title], description: lessons_params[:description], video_url: lessons_params[:video_url], 
+   serie_id: params[:serie_id] )
+    puts @lesson
+
+    puts @lesson.title
+    puts @lesson.save!
+  
+    puts @lesson.id
+    
+
+
   end
 
   def show

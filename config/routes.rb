@@ -28,4 +28,6 @@ Rails.application.routes.draw do
 
   get '/series/:serie_id/lessons/new', to: 'lessons#new', as: "lessons_new"
   post '/lessons/create', to: 'lessons#create'
+  get '/lessons/:lesson_id', to: 'lessons#show'
+  delete '/lessons/:lesson_id/delete', to: 'lessons#delete', as:"lessons_delete"
 end

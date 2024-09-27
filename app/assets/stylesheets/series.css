@@ -22,7 +22,8 @@
 .series-list{
    display: flex;
    flex-direction: row;
-   flex-wrap: nowrap;
+   flex-wrap: wrap;
+
 }
 
 .serie-card-image{

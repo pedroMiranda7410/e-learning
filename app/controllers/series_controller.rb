@@ -20,6 +20,9 @@ class SeriesController < ApplicationController
 
   def show 
     @serie = Serie.find_by_id(params[:serie_id])
+    @lessons = @serie.lessons 
+    puts @lessons  
+    puts '------------------------'
   end
 
   private 

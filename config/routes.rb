@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # resources :users
   # resources :sessions
-  # resources :lessons
+   resources :lessons
   # resources :comments
   root "user#dashboard"
 

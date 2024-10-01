@@ -28,9 +28,12 @@ class LessonsController < ApplicationController
   end
 
   def show
-    @lesson = Lesson.find_by_id(params[:lesson_id])
+    @lesson = Lesson.find_by_id(params[:id])
+    puts "****************************************************"
+    puts params
   end
-  def delete
+
+  def destroy
     @lesson = Lesson.find_by_id(params[:lesson_id])
     @lesson.destroy
     redirect_to "/series/#{@lesson.serie_id}"

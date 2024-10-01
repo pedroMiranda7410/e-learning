@@ -7,11 +7,12 @@ Rails.application.routes.draw do
 
   # resources :users
   # resources :sessions
-   resources :lessons
+  resources :lessons
   # resources :comments
   root "user#dashboard"
 
   get '/login', to: 'session#new', as: 'login'
+  get '/logout', to: 'session#destroy', as: 'logout'
 
   # CRUD - Users
   get '/user/new', to: 'user#new'

@@ -1,67 +1,14 @@
-<div class="container">
-    <div class="half-box">
-        <h1>Olá, <%= current_user.name %></h1>
-        <h2>Estou na dashboard</h2>
-        
-        <%= link_to 'Edit User with Rails Form', profile_path %>
-        <br>
-        <br>
-        <a href="/profile">Edit User with Anchor Tag</a>
-
-        <br> <br>
-        Quantidade de usuários: <%= @user_list.length %>
-    </div>
-    <div class="half-box">
-        <table class="my-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Tipo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% @user_list.each do |user| %>
-                    <tr>
-                        <td><%= user.id %></td>
-                        <td><%= user.name %></td>
-                        <td><%= user.email %></td>
-                        <td><%= user.type %></td>
-                    </tr>
-                <% end %>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-<style>
-    .container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .half-box {
-        width: 50%;
-        padding: 20px;
-    }
-
-    .my-table {
-        width: 100%;
-        border: 1px solid #000;
-        border-radius: 8px;
-        padding: 20px;
-    }
-
-    .my-table tbody tr td{
-        border-right: 1px solid #000;
-        padding: 5px 0px 5px 5px;
-    }
-
-    .my-table tbody tr td:last-child{
-        border-right: none;
-    }
-</style>
+<main>
+    <section class="series-list">
+        <% @series.each do |serie| %>
+            <a href="/series/<%= serie.id %>" class="serie">
+                <img class="serie-card-image" src="<%= serie.image_url %>" alt="Imagem da Série">
+                <div class="info"> 
+                    <h2><%= serie.title %></h2>
+                    <p><%= serie.description %></p>
+                    <p style= "font-size: 12px"> Autor: <%= serie.user.name %></p>
+                </div>
+            </a>
+        <% end %>
+    </section>
+</main>

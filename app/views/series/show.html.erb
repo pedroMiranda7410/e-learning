@@ -1,7 +1,37 @@
+<style>
+
+    .container-serie-header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .serie-header-image {
+        height: 100%;
+        max-height: 300px;
+        width: auto;
+    }
+</style>
+
 <section id="serie-information">
-    <div class="serie-title"> <%= @serie.title %></div>
-    <div class="serie-description"> <%= @serie.description %></div>
-    <div class="serie-image-url"> <%= @serie.image_url %></div>
+    <div class="row">
+        <div class="col-12 container-serie-header">
+            <img class="serie-header-image" src="<%= @serie.image_url %>" alt="Imagem da Série">
+        </div>
+    </div>
+    <div class="info mt-3"> 
+        <div class="row">
+            <div class="col-6">
+                <h2><%= @serie.title %></h2>
+            </div>
+            <div class="col-6">
+                <% if current_user == @serie.author %>
+                    <%= link_to "Cadastrar Aula", lessons_new_path, style: "float: right", class: "btn btn-success" %>
+                <% end %>
+            </div>
+        </div>
+        <p><%= @serie.description %></p>
+        <p style= "font-size: 12px"> Autor: <%= @serie.user.name %></p>
+    </div>
 </section>
 
 <section id="series-lessons" class='series-list'>
@@ -19,6 +49,3 @@
     <%end%>
    
 </section>
-
-<%= link_to "Cadastrar Aula", lessons_new_path %>
-  

@@ -1,10 +1,22 @@
-<h1><%= @lesson.title %> </h1>
+<div class="row mx-4 my-4">
+    <div class="col-6">
+        <h1><%= @lesson.title %> </h1>
+        <%= @lesson.video_url %>
+    </div>
+    <div class="col-6">
+        <% if @lesson.serie.user == current_user %>
+            <%= form_with model: @lesson, url: lesson_path(@lesson), method: :delete do |form| %>
+                <%= form.submit 'Deletar', class: 'btn btn-danger', style: "float: right" %>
+            <% end %>
+        <% end %>
+    </div>
+</div>
 
-<%= link_to 'Delete', lessons_path(@lesson
-
-
-
-
-
-
-),  method: :delete, form: {turbolink: false}, class: 'btn btn-danger' %>
+<div class="row">
+    <div class="col-12">
+        <iframe class="video-container" src="https://www.youtube.com/embed/<%= @lesson.video_url %>" 
+                frameborder="0" 
+                allowfullscreen>
+        </iframe>
+    </div>
+</div>

@@ -1,16 +1,10 @@
 
-<h1 class="series-h1">Minhas Séries:</h1>
-
-<!-- <a href="/series/new" class="create_series_button">Cadastrar Série</a> -->
-<%= link_to "Cadastrar Série", series_new_path, class: "create_series_button" %>
-
-
 <div class="row">
-    <div class="col-6">
-        teste 1
+    <div class="col-6 p-4">
+        <h1>Minha Séries</h1>
     </div>
-    <div class="col-6">
-        teste 2
+    <div class="col-6 p-4">
+        <%= link_to "Cadastrar Série", series_new_path, class: "create_series_button", style: "float: right; text-decoration: none" %>
     </div>
 </div>
 
@@ -32,10 +26,6 @@
             <!-- Mais itens de série aqui -->
     </section>
 </main>
-
-<footer>
-    <p>&copy; 2023 - Seu Nome</p>
-</footer>
 
 
 

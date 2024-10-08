@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :series, class_name:"Serie" 
-  self.inheritance_column = :_type_disabled
+  self.inheritance_column = :_type_disabled 
+  has_many :comments
 
   def self.students
     where(type: "Student")

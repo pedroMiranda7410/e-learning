@@ -31,4 +31,11 @@ Rails.application.routes.draw do
   post '/lessons/create', to: 'lessons#create'
   get '/lessons/:lesson_id', to: 'lessons#show'
   delete '/lessons/:lesson_id/delete', to: 'lessons#delete', as:"lessons_delete"
+
+  post '/comments/create', to: 'comments#create'
+  get  '/comments/new', to:'comments#new'
+  resources :lessons do
+    resources :comments, only: [:create, :new]
+  end
+
 end

@@ -20,3 +20,31 @@
         </iframe>
     </div>
 </div>
+ 
+
+
+<h1> Comentarios sobre a Aula:</h1>
+
+ <%= form_with model: @comment, local: true, url: comments_create_path, method: :post, class:"create_series_form" do |form| %>
+
+                
+        <%= form.label :content, "Comentario:", class:"create_series_label" %>
+        <%= form.text_field :content, required: true, class:"create_series_input" %>
+        <%= form.hidden_field :lesson_id, value:@lesson.id  %>
+          <%= form.hidden_field :user_id, value: current_user.id %> <!-- Ensure you have user_id if needed -->
+         
+
+
+        
+
+        <%= submit_tag "enviar", class:"create_series_button" %>
+
+
+    <%end %>
+
+</div>
+<% @comments.each do |comment| %> 
+<%=comment.content %>
+
+<%end%>
+

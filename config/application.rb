@@ -10,6 +10,11 @@ module Newsletter
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    # Define o fuso horário para São Paulo, Brasil (UTC-3 ou UTC-2 no horário de verão)
+    config.time_zone = 'America/Sao_Paulo'
+    
+    # Certifique-se de que os registros no banco de dados são armazenados em UTC
+    config.active_record.default_timezone = :utc
 
     # Configuration for the application, engines, and railties goes here.
     #

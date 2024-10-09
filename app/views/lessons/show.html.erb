@@ -20,31 +20,48 @@
         </iframe>
     </div>
 </div>
- 
 
-
-<h1> Comentarios sobre a Aula:</h1>
-
- <%= form_with model: @comment, local: true, url: comments_create_path, method: :post, class:"create_series_form" do |form| %>
-
-                
-        <%= form.label :content, "Comentario:", class:"create_series_label" %>
-        <%= form.text_field :content, required: true, class:"create_series_input" %>
+<%= form_with model: @comment, local: true, url: comments_create_path, method: :post do |form| %>
+<div class="row m-3">
+    <div class="col-11">
+        <%= form.text_field :content, required: true, class:"create_series_input", placeholder: "Digite aqui seu comentário..." %>
         <%= form.hidden_field :lesson_id, value:@lesson.id  %>
-          <%= form.hidden_field :user_id, value: current_user.id %> <!-- Ensure you have user_id if needed -->
-         
-
-
-        
-
-        <%= submit_tag "enviar", class:"create_series_button" %>
-
-
-    <%end %>
-
+    </div>
+    <div class="col-1" style="float:left">
+        <%= button_tag type: 'submit', class:"btn-new-comment" do %>
+            <img src="/send-icon.svg" />
+        <% end %>
+    </div>
 </div>
-<% @comments.each do |comment| %> 
-<%=comment.content %>
+<% end %>
+<div class="row" style="overflow-y: scroll; max-height:300px">
+    <div class="col-12">
+        <% @comments.order(created_at: :desc).each do |comment| %> 
+            <div class="row" style="margin: 0.8rem 1rem 0 1rem;">
+                <div class="col-12">
+                    <strong><%= comment.user.name %></strong> 
+                    <% if @lesson.serie.user == comment.user %>
+                        <span class="comment-instructor-tag">Instrutor</span>
+                    <% end %>
+                    <small style="font-size: 13px"><%= comment.created_at.strftime("%H:%M %d/%m") %></small>
+                </div>
+            </div>
+            <div class="row" style="margin: 0rem 1rem; border-bottom: 1px solid rgba(0,0,0, 0.2)">
+                <div class="col-12">
+                    <%=comment.content %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
 
-<%end%>
 
+<style>
+    .comment-instructor-tag {
+        background: #0D6EFD;
+        color: white;
+        padding: 0px 8px;
+        font-size: 13px;
+        border-radius: 4px;
+    }
+</style>

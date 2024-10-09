@@ -22,6 +22,8 @@ class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find_by_id(params[:id])
     @comments = @lesson.comments
+
+    @comment = Comment.new
   end
 
   def destroy

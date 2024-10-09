@@ -1,5 +1,4 @@
 class SeriesController < ApplicationController
-  #before_action :authenticate_user! (ação já feita na aplicattion_controller)
   before_action :require_instructor, only: [:new, :create, :index] 
   def index
     @series = current_user.series
@@ -11,6 +10,7 @@ class SeriesController < ApplicationController
     
   def create 
     @serie = current_user.series.build(series_params)
+    
     if current_user.is_instructor? && @serie.save 
       redirect_to @serie, notice: "Serie criada com sucesso!"
     else
@@ -21,8 +21,6 @@ class SeriesController < ApplicationController
   def show 
     @serie = Serie.find_by_id(params[:serie_id])
     @lessons = @serie.lessons 
-    puts @lessons  
-    puts '------------------------'
   end
 
   private 
